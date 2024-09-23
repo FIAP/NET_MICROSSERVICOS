@@ -1,0 +1,26 @@
+﻿@using App.Model;
+
+@{
+    var alerts = TempData.ContainsKey(Alert.TempDataKey)
+                ? (List<Alert>)TempData[Alert.TempDataKey]
+                : new List<Alert>();
+
+    if (alerts.Any())
+    {
+       
+    }
+
+
+    foreach (var alert in alerts)
+    {
+        var dismissableClass = alert.Dismissable ? "alert-dismissable" : null;
+        <div class="alert alert-@alert.AlertStyle @dismissableClass">
+
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+            @Html.Raw(alert.Message)
+        </div>
+    }
+}
+
+

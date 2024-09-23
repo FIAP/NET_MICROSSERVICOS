@@ -1,0 +1,17 @@
+﻿CREATE TABLE "User" (
+    Id SERIAL PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Password VARCHAR(100) NOT NULL,
+    Enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    Deleted BOOLEAN NOT NULL DEFAULT FALSE,
+    UserType INTEGER NOT NULL
+);
+
+
+INSERT INTO "User" (Username, Email, Password, Enabled, Deleted, UserType)
+VALUES
+    ('admin_user', 'admin@fiap.com.br', '102030', TRUE, FALSE, 1),  -- Admin
+    ('teacher_user', 'teacher@fiap.com.br', '102030', TRUE, FALSE, 2),  -- Teacher
+    ('applicant_user', 'applicant@fiap.com.br', '102030', TRUE, FALSE, 3),  -- Applicant
+    ('company_user', 'company@fiap.com.br', '102030', TRUE, FALSE, 4);  -- Company
