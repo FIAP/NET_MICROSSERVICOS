@@ -1,0 +1,14 @@
+### Login Request (to generate a JWT token)
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123",
+  "role": "ADM"
+}
+
+### Protected Route (access a protected resource with the token)
+GET http://localhost:8080/secure
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjcxODUwMDgsInJvbGUiOiJBRE0iLCJ1c2VybmFtZSI6ImFkbWluIn0.pCpOV2uirZDWnT3VeuO5-fcf6FkxqL6MDpRREnVzXXg
+
