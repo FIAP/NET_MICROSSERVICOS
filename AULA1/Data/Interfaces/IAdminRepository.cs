@@ -1,5 +1,4 @@
-﻿using Model.Entities;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Data.Interfaces
 {

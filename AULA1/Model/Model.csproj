@@ -41,13 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Admin.cs" />
-    <Compile Include="Entities\Applicant.cs" />
-    <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\Teacher.cs" />
-    <Compile Include="Entities\UserBase.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserType.cs" />
+    <Compile Include="Entities\ADM.cs" />
+    <Compile Include="Entities\Agendamento.cs" />
+    <Compile Include="Entities\Candidato.cs" />
+    <Compile Include="Entities\Empresa.cs" />
+    <Compile Include="Entities\Professor.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

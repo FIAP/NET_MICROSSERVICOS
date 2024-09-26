@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
-	"go-auth/models" // Importing the models package
+	"go-auth/models"
 	"net/http"
 	"os"
 	"time"
@@ -10,11 +10,10 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-// Simulating a user database
 var users = map[string]models.User{
 	"admin":     {"admin", "admin123", "ADM"},
 	"professor": {"professor", "professor123", "Professor"},
-	"candidate": {"candidate", "candidate123", "Candidato"},
+	"candidato": {"candidato", "candidato123", "candidato"},
 	"empresa":   {"empresa", "empresa123", "Empresa"},
 }
 
@@ -32,7 +31,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Create the JWT token
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"username": user.Username,
 		"role":     user.Role,

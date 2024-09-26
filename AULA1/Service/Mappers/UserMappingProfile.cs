@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Model.Entities;
 using Service.Models;
 
 namespace WEB.Mappers
@@ -9,7 +8,7 @@ namespace WEB.Mappers
 
         protected override void Configure()
         {           
-            Mapper.CreateMap<User, UserViewModel>().ReverseMap();              
+            Mapper.CreateMap<Usuario, UserViewModel>().ReverseMap();              
         }
     }
 }

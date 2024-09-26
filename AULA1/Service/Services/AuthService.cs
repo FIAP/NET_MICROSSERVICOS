@@ -1,5 +1,5 @@
 ﻿using Service.Interfaces;
-using Model.Entities;
+
 using Service.Models;
 using AutoMapper;
 using Data.Interfaces;
@@ -18,10 +18,10 @@ namespace Service.Services
 
         public async Task<UserViewModel> LoginAsync(UserViewModel user)
         {
-            var userDomain = Mapper.Map<UserViewModel, User>(user);
+            var userDomain = Mapper.Map<UserViewModel, Usuario>(user);
             var validateUser = await _authRepository.Login(userDomain);
 
-            var userViewModel = Mapper.Map<User, UserViewModel>(validateUser);
+            var userViewModel = Mapper.Map<Usuario, UserViewModel>(validateUser);
 
             return userViewModel;
         }

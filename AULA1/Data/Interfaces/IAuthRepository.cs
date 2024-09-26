@@ -1,10 +1,9 @@
-﻿using Model.Entities;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Data.Interfaces
 {
     public interface IAuthRepository
     {
-        Task<User> Login(User user);
+        Task<Usuario> Login(Usuario user);
     }
 }

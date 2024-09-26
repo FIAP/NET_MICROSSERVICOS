@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Data.Config;
 using Data.Interfaces;
-using Model.Entities;
+
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,7 +9,7 @@ namespace Data.Repositories
 {
     public class AuthRepository : IAuthRepository
     {
-        public async Task<User> Login(User user)
+        public async Task<Usuario> Login(Usuario user)
         {
             var connection = PostgreSqlConnectionRepository.GetConnection();
 
@@ -18,7 +18,7 @@ namespace Data.Repositories
                         FROM ""User""
                         WHERE Email = '{user.Email}' 
                         AND Password = '{user.Password}';";
-            var result = await connection.QueryAsync<User>(query);
+            var result = await connection.QueryAsync<Usuario>(query);
 
             return result.FirstOrDefault();
         }
