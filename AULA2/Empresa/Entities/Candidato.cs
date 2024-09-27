@@ -1,3 +1,5 @@
+using Empresas.Entities;
+
 public class Candidato
 {
     public int Id { get; set; }

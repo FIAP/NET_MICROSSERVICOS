@@ -1,11 +1,15 @@
+using Candidato.Config;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+#region [JWT]
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -20,8 +24,8 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-        RoleClaimType = "role", 
-        ClockSkew = TimeSpan.Zero 
+        RoleClaimType = "role",
+        ClockSkew = TimeSpan.Zero
     };
 
     options.Events = new JwtBearerEvents
@@ -60,16 +64,40 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorizationBuilder()
                                   .AddPolicy("candidato", policy =>
         policy.RequireClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "candidato"));
+#endregion
+
+#region [Config]
+string connectionString = builder.Configuration.GetValue<string>("MongoDB:ConnectionString");
+
+
+builder.Services.AddHealthChecks()
+    .AddMongoDb(
+        connectionString,
+        name: "MongoDB",
+        failureStatus: HealthStatus.Unhealthy,
+        tags: new[] { "db", "nosql", "mongo" }
+    );
+
+builder.Services.AddSingleton<MongoDbContext>();
+
+
+#endregion
 
 var app = builder.Build();
+
+
+#region [Healthcheck]
+app.UseHealthChecks("/health", new HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+
+});
+
+#endregion
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/weatherforecast", [Authorize(Policy = "candidato")] () =>
-{
-    return Results.Ok(new { Weather = "Sunny" });
-})
-.WithName("GetWeatherForecast");
 
 app.Run();

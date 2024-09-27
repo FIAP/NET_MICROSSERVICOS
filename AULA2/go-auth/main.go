@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go-auth/database"
 	"go-auth/handlers"
 	"go-auth/middleware"
 	"log"
@@ -20,6 +21,9 @@ func main() {
 	if jwtSecret == "" {
 		log.Fatal("JWT_SECRET not found in .env file")
 	}
+
+	mongoURI := os.Getenv("MONGODB_URI")
+	database.ConnectToMongoDB(mongoURI)
 
 	http.HandleFunc("/login", handlers.LoginHandler)
 	http.Handle("/secure", middleware.AuthMiddleware(http.HandlerFunc(handlers.SecureHandler)))
