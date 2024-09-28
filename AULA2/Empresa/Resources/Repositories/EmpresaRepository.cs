@@ -10,7 +10,6 @@ namespace Empresas.Resources.Repositories
 
         public EmpresaRepository()
         {
-            // Obter a coleção do MongoDB para a entidade Empresa
             _collection = MongoDbContext.Instance.Database.GetCollection<Empresa>("empresas");
         }
 
@@ -19,24 +18,24 @@ namespace Empresas.Resources.Repositories
             return await _collection.Find(emp => true).ToListAsync();
         }
 
-        public async Task<Empresa> GetByIdAsync(int id)
+        public async Task<Empresa> GetByIdAsync(Guid id)
         {
             return await _collection.Find(emp => emp.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task AddAsync(Empresa entity)
         {
-            await _collection.InsertOneAsync(entity);
+            //await _collection.InsertOneAsync(entity);
         }
 
-        public async Task UpdateAsync(int id, Empresa entity)
+        public async Task UpdateAsync(Guid id, Empresa entity)
         {
-            await _collection.ReplaceOneAsync(emp => emp.Id == id, entity);
+            //await _collection.ReplaceOneAsync(emp => emp.Id == id, entity);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
-            await _collection.DeleteOneAsync(emp => emp.Id == id);
+           // await _collection.DeleteOneAsync(emp => emp.Id == id);
         }
     }
 

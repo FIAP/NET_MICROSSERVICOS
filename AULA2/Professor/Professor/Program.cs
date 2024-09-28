@@ -1,11 +1,15 @@
+using Applicantion.Interfaces;
+using Domain.Entities;
 using HealthChecks.UI.Client;
+using Infrastructure.Consumers;
+using Infrastructure.Repositories;
+using MassTransit;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container. l2gvE9tluPkpehgh
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,7 +32,30 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddTransient<AppDbContext>();
 #endregion
 
+#region [Broker]
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<ProfessorConsumer>();
 
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["RabbitMQ:HostName"], h =>
+        {
+            h.Username(builder.Configuration["RabbitMQ:Username"]);
+            h.Password(builder.Configuration["RabbitMQ:Password"]);
+        });
+
+        cfg.ReceiveEndpoint("professor-created-queue", e =>
+        {
+            e.ConfigureConsumer<ProfessorConsumer>(context);
+        });
+    });
+});
+#endregion
+
+#region [DI]
+builder.Services.AddScoped<IRepository<Professor>, ProfessorRepository>();
+#endregion
 
 var app = builder.Build();
 

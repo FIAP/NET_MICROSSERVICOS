@@ -1,6 +1,9 @@
-public class Candidato
+namespace Domain.Entities
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Email { get; set; }
+    public class Candidato
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+    }
 }

@@ -1,4 +1,4 @@
-using Applicantion.Interfaces;
+using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;

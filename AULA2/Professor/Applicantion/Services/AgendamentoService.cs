@@ -1,3 +1,6 @@
+using Applicantion.Interfaces;
+using Domain.Entities;
+
 public class AgendamentoService
 {
     private readonly IRepository<Agendamento> _agendamentoRepository;
@@ -12,5 +15,4 @@ public class AgendamentoService
         return await _agendamentoRepository.GetAllAsync();
     }
 
-    // Outros métodos para adicionar, atualizar, deletar agendamentos
 }

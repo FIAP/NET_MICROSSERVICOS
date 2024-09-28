@@ -1,11 +1,12 @@
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Professor> Professores { get; set; }
-    public DbSet<Agenda> Agendas { get; set; }
-    public DbSet<Agendamento> Agendamentos { get; set; }
-    public DbSet<Candidato> Candidatos { get; set; }
+    public DbSet<Professor> Professor { get; set; }
+    public DbSet<ProfessorAgenda> ProfessorAgenda { get; set; }
+    public DbSet<Agendamento> Agendamento { get; set; }
+    public DbSet<Candidato> Candidato { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 }

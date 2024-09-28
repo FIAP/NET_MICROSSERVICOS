@@ -1,0 +1,18 @@
+-- Insere dados fictícios na tabela Endereco
+INSERT INTO Endereco (Logradouro, Numero, Complemento, Bairro, Cidade, Estado, CEP, Pais)
+VALUES 
+('Rua das Flores', '123', 'Apto 101', 'Centro', 'São Paulo', 'SP', '01000-000', 'Brasil'),
+('Avenida Brasil', '456', 'Bloco B', 'Jardins', 'Rio de Janeiro', 'RJ', '20000-000', 'Brasil'),
+('Rua dos Pinheiros', '789', NULL, 'Vila Madalena', 'São Paulo', 'SP', '05000-000', 'Brasil');
+
+-- Insere dados fictícios na tabela Empresa
+INSERT INTO Empresa (Nome, TotalTestesComprados, Email, CNPJ, EnderecoId)
+VALUES 
+('Tech Solutions', 50, 'contato@techsolutions.com', '12345678000100', 1),
+('EducaMais', 100, 'info@educamais.com', '98765432000100', 2);
+
+-- Insere dados fictícios na tabela Professor
+INSERT INTO Professor (Nome, Email, CPF, EnderecoId)
+VALUES 
+('João Silva', 'joao.silva@educamais.com', '12345678900', 3),
+('Maria Oliveira', 'maria.oliveira@techsolutions.com', '98765432100', 1);

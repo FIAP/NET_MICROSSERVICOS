@@ -1,0 +1,33 @@
+-- Cria a tabela Endereco
+CREATE TABLE Endereco (
+    Id SERIAL PRIMARY KEY,
+    Logradouro VARCHAR(255) NOT NULL,
+    Numero VARCHAR(50) NOT NULL,
+    Complemento VARCHAR(255),
+    Bairro VARCHAR(255) NOT NULL,
+    Cidade VARCHAR(255) NOT NULL,
+    Estado VARCHAR(255) NOT NULL,
+    CEP VARCHAR(20) NOT NULL,
+    Pais VARCHAR(100) NOT NULL
+);
+
+-- Cria a tabela Empresa
+CREATE TABLE Empresa (
+    Id SERIAL PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    TotalTestesComprados INT NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    CNPJ VARCHAR(20) NOT NULL,
+    EnderecoId INT,
+    FOREIGN KEY (EnderecoId) REFERENCES Endereco(Id)
+);
+
+-- Cria a tabela Professor
+CREATE TABLE Professor (
+    Id SERIAL PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    CPF VARCHAR(20) NOT NULL,
+    EnderecoId INT,
+    FOREIGN KEY (EnderecoId) REFERENCES Endereco(Id)
+);
