@@ -2,6 +2,7 @@ using Applicantion.Interfaces;
 using Domain.Entities;
 using HealthChecks.UI.Client;
 using Infrastructure.Consumers;
+using Infrastructure.Midleware;
 using Infrastructure.Repositories;
 using MassTransit;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -15,6 +16,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+
 
 #region [Config]
 string postgresConnectionString = builder.Configuration.GetSection("Databases:ConnectionString").Value;
@@ -54,6 +58,9 @@ builder.Services.AddMassTransit(x =>
 #endregion
 
 #region [DI]
+builder.Services.AddTransient<ICorrelationIdGenerator, CorrelationIdGenerator>();
+
+builder.Services.AddTransient(typeof(BaseLogger<>));
 builder.Services.AddScoped<IRepository<Professor>, ProfessorRepository>();
 #endregion
 
@@ -79,5 +86,8 @@ app.UseHealthChecks("/health", new HealthCheckOptions
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCorrelationMiddleware();
+
 
 app.Run();

@@ -1,7 +1,9 @@
 ﻿using API.Entities;
+using API.Infra;
 using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
@@ -11,10 +13,12 @@ namespace API.Controllers
     public class ProfessoresController : ControllerBase
     {
         private readonly IProfessorService _professorService;
+        private readonly BaseLogger<ProfessoresController> _logger;
 
-        public ProfessoresController(IProfessorService professorService)
+        public ProfessoresController(IProfessorService professorService, BaseLogger<ProfessoresController> logger)
         {
             _professorService = professorService;
+            _logger = logger;
         }
 
         // GET: api/professor
@@ -40,15 +44,20 @@ namespace API.Controllers
         [HttpGet("schedules/{id}")]
         public async Task<ActionResult<IEnumerable<ProfessorViewModel>>> GetSchedules(int id)
         {
-            var professores = await _professorService.GetSchedules(id); 
+            var professores = await _professorService.GetSchedules(id);
             return Ok(professores);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ProfessorViewModel professor)
         {
+            _logger.LogInformation($"Iniciando processo de criacao do professor");
+
             await _professorService.AddAsync(professor);
-            return Ok(new {mensagem = "Professor criado com sucesso!" });
+
+            _logger.LogInformation($"professor criado com sucesso!");
+
+            return Ok(new { mensagem = "Professor criado com sucesso!" });
         }
 
         // PUT: api/professor/{id}

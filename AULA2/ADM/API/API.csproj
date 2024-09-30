@@ -10,6 +10,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="7.1.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Google.Apis.Core" Version="1.68.0" />
     <PackageReference Include="MassTransit" Version="8.2.5" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
     <PackageReference Include="MassTransit.RabbitMq.Extensions.Hosting" Version="1.0.29" />

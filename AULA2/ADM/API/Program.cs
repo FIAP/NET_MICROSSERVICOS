@@ -10,6 +10,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using MassTransit;
+using API.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -120,6 +121,11 @@ builder.Services.AddTransient<AppDbContext>();
 #endregion
 
 #region [DI]
+
+builder.Services.AddTransient<ICorrelationIdGenerator, CorrelationIdGenerator>();
+
+builder.Services.AddTransient(typeof(BaseLogger<>));
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IRepository<Empresa>, EmpresaRepository>();
@@ -168,5 +174,7 @@ app.UseHealthChecks("/health", new HealthCheckOptions
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCorrelationMiddleware();
 
 app.Run();

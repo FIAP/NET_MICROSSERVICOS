@@ -7,6 +7,7 @@ public class ProfessorCreatedViewModel(string nome, string email, string cNPJ)
     public string Nome { get; set; } = nome;
     public string Email { get; set; } = email;
     public string CNPJ { get; set; } = cNPJ;
+    public string CorrelationID { get; set; }
 
 }
 
