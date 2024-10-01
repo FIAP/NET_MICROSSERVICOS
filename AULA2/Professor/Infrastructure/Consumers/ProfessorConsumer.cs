@@ -12,8 +12,6 @@ namespace Infrastructure.Consumers
         private readonly IRepository<Professor> _repository = repository;
         protected readonly ILogger<ProfessorConsumer> _logger = logger;
 
-
-
         public Task Consume(ConsumeContext<ProfessorCreatedViewModel> context)
         {
             ProfessorCreatedViewModel message = context.Message;

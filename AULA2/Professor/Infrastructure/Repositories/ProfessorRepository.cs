@@ -19,6 +19,7 @@ namespace Infrastructure.Repositories
             }
 
         }
+        
 
         private async Task<bool> ValidateCNPJAsync(string cnpj)
         {
