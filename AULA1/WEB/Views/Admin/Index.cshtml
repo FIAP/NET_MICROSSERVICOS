@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-6 col-sm-offset-3">
+
+            <div class="panel panel-white text-center mt20 pd70">
+                <h2 class="ui icon header">
+                    <i class="student purple icon"></i>
+                    <span class="content">
+                        <span class="ui purple header"> Olá, ADM</span>
+                    </span>
+                </h2>
+            </div>
+
+            <!-- Quantidade de Professores -->
+            <div class="panel panel-white text-center mt20 pd20">
+                <h3 class="ui header">
+                    <i class="chalkboard teacher icon"></i>
+                    <span class="content">Quantidade de Professores Cadastrados</span>
+                </h3>
+                <p id="professores-quantidade">50</p> <!-- Valor exemplo -->
+            </div>
+
+            <!-- Quantidade de Empresas Vinculadas -->
+            <div class="panel panel-white text-center mt20 pd20">
+                <h3 class="ui header">
+                    <i class="building icon"></i>
+                    <span class="content">Quantidade de Empresas Vinculadas</span>
+                </h3>
+                <p id="empresas-quantidade">10</p> <!-- Valor exemplo -->
+            </div>
+
+            <!-- Quantidade de Acessos por Empresa -->
+            <div class="panel panel-white text-center mt20 pd20">
+                <h3 class="ui header">
+                    <i class="chart line icon"></i>
+                    <span class="content">Quantidade de Acessos por Empresa</span>
+                </h3>
+                <ul id="acessos-empresas">
+                    <li>Empresa A: 120 acessos</li>
+                    <li>Empresa B: 98 acessos</li>
+                    <li>Empresa C: 76 acessos</li>
+                </ul> <!-- Lista com valores de exemplo -->
+            </div>
+
+            <!-- Quantidade de Candidatos por Empresa -->
+            <div class="panel panel-white text-center mt20 pd20">
+                <h3 class="ui header">
+                    <i class="user group icon"></i>
+                    <span class="content">Quantidade de Candidatos por Empresa</span>
+                </h3>
+                <ul id="candidatos-empresas">
+                    <li>Empresa A: 30 candidatos</li>
+                    <li>Empresa B: 25 candidatos</li>
+                    <li>Empresa C: 18 candidatos</li>
+                </ul> <!-- Lista com valores de exemplo -->
+            </div>
+
+        </div>
+    </div><!-- Row -->
+</div>
+

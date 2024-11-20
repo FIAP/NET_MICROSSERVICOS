@@ -1,0 +1,157 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.icon-lock-open {
+    color: #22baa0;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.icon-lock {
+    color: #f25656;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.display-grade-detail {
+    cursor: pointer;
+}
+
+
+    .display-grade-detail:hover {
+        color: #c9c9c9;
+    }
+
+.box-admin-reschedule {
+    display: none;
+}
+
+.company-branch-container, .company-matrix-container, .box-admin-reschedule-save, .box-admin-reason, .box-admin-reschedule-teacher, .box-admin-acomplish {
+    display: none;
+}
+
+.datepicker {
+    filter: none !important;
+}
+
+.change-operation-indicator {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.teacher-schedule-available {
+    color: #16ab39;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.teacher-schedule-unavailable {
+    color: #db2828;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*POG =\ */
+.ui.modal {
+    margin-top: -350px !important;
+}
+
+.company-appemails-filters {
+    margin-bottom: 15px;
+}
+
+.applicant-complete-filter-return {
+    color: #74767d;
+    font-weight: 300;
+}
+
+#custom-load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.85;
+    z-index: 99999;
+    display: none;
+}
+
+.loader-container {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -250px;
+    text-align: center;
+}
+
+.loader-text {
+    color: #fff;
+    opacity: 1;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: 'Roboto','Helvetica','Arial',sans-serif !important;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-left: 185px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.display-grade-detail-skype {
+    cursor: pointer;
+}

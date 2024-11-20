@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\thiagoadriano\\source\\repos\\CursoNET\\NET_MICROSSERVICOS\\AULA1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B3BD695-CE10-4F2C-9158-3F39B3F13B21}|WEB\\MVC.csproj|c:\\users\\thiagoadriano\\source\\repos\\cursonet\\net_microsservicos\\aula1\\web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{4B3BD695-CE10-4F2C-9158-3F39B3F13B21}|WEB\\MVC.csproj|solutionrelative:web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\thiagoadriano\\source\\repos\\CursoNET\\NET_MICROSSERVICOS\\AULA1\\WEB\\Web.config",
+              "RelativeDocumentMoniker": "WEB\\Web.config",
+              "ToolTip": "C:\\Users\\thiagoadriano\\source\\repos\\CursoNET\\NET_MICROSSERVICOS\\AULA1\\WEB\\Web.config",
+              "RelativeToolTip": "WEB\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-09-23T11:45:01.311Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

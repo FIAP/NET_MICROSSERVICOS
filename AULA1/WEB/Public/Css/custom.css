@@ -1,0 +1,288 @@
+/* Write your custom CSS here */
+h1, h2, h3, h4, h5{
+    color:#000;
+    font-weight:400;
+}
+.nomargin{ margin: 0 !important}
+.nopadding{ padding: 0}
+.text_left { text-align: left;}
+.text_right { text-align: right; }
+.text_center { text-align: center; }
+.text_justify {text-align: justify;}
+.text_nowrap {white-space: nowrap;}
+.text_lowercase {text-transform: lowercase;}
+.text_uppercase {text-transform: uppercase;}
+.text_capitalize {text-transform: capitalize;}
+.text_muted {color: #777777;}
+.text_primary {color: #428bca;}
+.left{float:left}
+.right{float:right}
+.clear {clear:both;}
+
+.mt10{margin-top: 10px !important}
+.mt20{margin-top: 20px !important}
+.mt25{margin-top: 25px !important}
+.mt30{margin-top: 30px !important}
+.mt50{margin-top: 50px !important}
+.mt70{margin-top: 50px !important}
+.mb10{margin-bottom: 10px !important}
+.mb20{margin-bottom: 20px !important}
+.mb25{margin-bottom: 25px !important}
+.mb30{margin-bottom: 30px !important}
+
+.pd0{padding: 0px !important}
+.pd10{padding: 10px !important}
+.pd20{padding: 20px !important}
+.pd40{padding: 40px !important}
+.pd70{padding: 70px !important}
+.pt100{ padding-top: 100px !important}
+.pt10{padding-top: 10px !important}
+.pt20{padding-top: 20px !important}
+.pt30{padding-top: 30px !important}
+.pt50{padding-top: 50px !important}
+.pb100{padding-bottom: 100px !important}
+.pb50{padding-bottom: 50px !important}
+.pb30{padding-bottom: 30px !important}
+.pd_button_md{padding: 5px 35px; background:#62bf6e !important;}
+.pd_button{padding: 10px 30px; float:right}
+.pd_button i{padding-left:10px;}
+
+.ft10{ font-size:10px !important;}
+.ft13{ font-size:13px !important;}
+.ft15{ font-size:15px !important;}
+.ft20{ font-size:20px !important;}
+.ft30{ font-size:30px !important;}
+.ft40{ font-size:40px !important;}
+.fade {opacity: 1;}
+.editableform .form-control {padding: 4px 15px !important;}
+
+/***********************
+    TOP MENU
+***********************/
+.topmenu-outer{
+    /*background:#1f2532;*/
+    background-image: linear-gradient(-30deg, #4f0286 0%, #010a33 100%);
+}
+.sidebar{
+    background:#FFF;
+    border-bottom:1px solid rgba(0, 0, 0, 0.1)
+}
+.top-menu .navbar-nav>li>a{ color:#FFF;}
+.menu.accordion-menu a{ color:#74767d;}
+.menu.accordion-menu ul{
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.navbar .logo-box{background:#010a33;}
+.navbar .logo-box a{ color:#FFF;}
+
+.small-sidebar:not(.page-sidebar-fixed) .accordion-menu li.droplink:hover > a, .horizontal-bar .accordion-menu > li.droplink:hover > a, .menu.accordion-menu ul, .menu.accordion-menu li.open > a, .hover-menu .accordion-menu > li.droplink:hover > a, .menu.accordion-menu ul, .menu.accordion-menu > li > a:hover{
+    background:#010a33;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.horizontal-bar .accordion-menu{
+    text-align:left !important;
+}
+.logo-text span img{ margin-top:-3px;}
+
+/***********************
+    LOGIN PAGE
+***********************/
+.page-login{
+    background:url("../images/login-bg@1x.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.login-box{
+    background: #fff;
+    border-radius: 3px;
+    padding: 80px 40px;
+}
+.login-title{
+    font: 400 18px 'Open Sans';
+    color: #1E2431;
+}
+.login-box .form-control{padding:30px 0 !important;}
+
+.login-box .form-group input[type=text], .login-box .form-group input[type=email], .login-box .form-group input[type=password] {
+    font-weight: 400;
+    font-size: 18px;
+    color: #1E2431;
+    border: 0;
+    width: 100%;    
+    padding: 1px 0 20px;
+    border-bottom: 1px solid #dadee6;
+    box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+    border-radius: 0;
+}
+.primary.mybutton{
+    margin:10px 0;
+    padding: 23px 0;
+    color: #fff;
+    background: #f36;
+    text-align: center;
+    letter-spacing: .9px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    width: 100%;
+    text-transform: uppercase;
+    font: 400 12px/1em 'Open Sans';
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.add_line{
+    position:relative;
+    background: #EAECEE;
+    padding: 10px 10px;
+    border-radius:0;
+    margin-bottom:10px;
+    border-left:3px solid #2757A2;
+}
+.add_line label{padding:4px 0 0;}
+    .add_line label input{margin-right:5px;position:relative; top:3px;}
+
+.remove_field{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+textarea{width:100%; border:1px solid #dce1e4; padding: 6px 10px!important;}
+
+.remove_field{
+    position:absolute;
+    right: 0;
+    top: 0;
+    padding: 26px;
+    background: #7a6fbe;
+}
+
+.panel{
+       border-radius:5px;
+}
+.panel-default .panel-heading{
+    background: linear-gradient(#fff, #e0e0e0);
+    border:1px solid  #dadee6 !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding-bottom:40px;
+}
+
+.panel .panel-body{
+    /*border-left: 1px solid  #dadee6;
+    border-right: 1px solid  #dadee6;
+    border-bottom:1px solid  #dadee6;*/
+    padding-top: 20px !important;
+}
+
+.nav>li>a{
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-top-left-radius:3px !important;
+    border-top-right-radius:3px !important;
+}
+
+.form-control, textarea{
+    font-size:14px;
+    border: 1px solid #DEE3E9;
+    color: #464D5D;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding: 15px 17px !important;
+    line-height: 21px;
+    border-radius: 3px;
+    background: #fff;
+    height: auto;
+    padding-bottom: 14px;
+    padding-top: 15px;
+}
+.form-control:focus, textarea:focus{
+    border:1px solid #6cbd7d;
+}
+
+/***********************
+    BOTOES
+***********************/
+.mybutton {
+    padding:0 15px;
+    border: 1px solid #d4d6da;
+    background:#FFF;
+    border-radius: 2px;
+    color: #646f82;
+    font-size: 11px;
+    font-weight: 600;
+    /*height: 36px;*/
+    line-height: 30px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 0;
+    text-transform: uppercase;
+    -webkit-transition: width 200ms ease,background-color 200ms ease,border-color 200ms ease;
+    transition: width 200ms ease,background-color 200ms ease,border-color 200ms ease;
+}
+.mybutton:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0
+}
+.mybutton:hover {
+    color: #fff;
+   /* background: #ff0040;*/
+    background: #1e81d6;
+    border-color: #1e81d6;
+}
+
+/*.ui.button, .ui.buttons .button, .ui.buttons .or{
+    font-size:1.3rem;
+}*/
+
+table tr th a{
+    text-transform: uppercase;
+    line-height: 17px;
+    font-size: 12px;
+    color: #6f7685;
+    letter-spacing: .8px;
+}
+
+table tr th a i, table tr th a span, .nav-pills>li>a>span{ padding-right:5px;}
+
+.dataTables_filter label{
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#f36;
+}
+.dataTables_filter label input {
+    border:1px solid #f36 !important;
+    border-radius:2px !important;
+}
+
+.width_first_collums{
+    width:46%;
+    text-transform:uppercase;
+    
+}
+
+a:focus, a:hover{
+    text-decoration:none;
+}
+
+.ui.modal>.content{
+    background: #f9f9fb;
+    padding:18px 67px 44px;
+}
+

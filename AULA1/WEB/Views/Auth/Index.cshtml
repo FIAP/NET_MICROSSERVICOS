@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 center">
+        <div class="alert alert-danger" role="alert" style="display:none;">
+            Modelo de mensagem de Erro
+        </div>
+
+        <div class="login-box">
+            <p class="text-center m-t-md login-title">Please login into your account.</p>
+            <form class="m-t-md" method="POST" action="@Url.Action("LogOn", "Auth")">
+                <div class="form-group">
+                    <input type="email" required class="form-control" placeholder="Email" id="Name" name="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password"  class="form-control" placeholder="Password" id="Password" name="Password" required>
+                </div>
+                <button type="submit" class="primary mybutton">Login</button>
+                @*<a href="@Url.Action("ForgotPassword","LoginAdmin")" class="display-block text-center m-t-md text-sm">Forgot Password?</a>*@
+            </form>
+            <p class="text-center m-t-xs text-sm">2024 &copy; FIAP</p>
+        </div>
+    </div>
+</div><!-- Row -->
+ 

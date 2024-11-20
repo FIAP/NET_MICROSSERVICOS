@@ -1,0 +1,26 @@
+# Datadog Agent
+docker run -d --name datadog-agent \
+          --network bridge \
+          --cgroupns host \
+          --pid host \
+          -v /var/run/datadog/:/var/run/datadog/ \
+          -v /var/run/docker.sock:/var/run/docker.sock:ro \
+          -v /proc/:/host/proc/:ro \
+          -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
+          -e DD_LOGS_ENABLED=true \
+          -e DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true \
+          -e DD_CONTAINER_EXCLUDE_LOGS="name:datadog-agent" \
+          -e DD_API_KEY=206f0494b2fca40198db9257fc6b1442 \
+          -e DD_APM_ENABLED=true \
+          -e DD_APM_NON_LOCAL_TRAFFIC=true \
+          -e DD_SITE="us5.datadoghq.com" \
+          datadog/agent:latest
+
+docker run -d -p 5050:8080 --network bridge  -v /var/run/datadog/:/var/run/datadog/  net-stg
+
+
+for i in {1..10000};
+do
+  curl -s -k 'GET' -H 'header info' -b 'ff' 'http://localhost:5050/';
+  curl -s -k 'GET' -H 'header info' -b 'ff' 'http://localhost:5050/health';
+done
